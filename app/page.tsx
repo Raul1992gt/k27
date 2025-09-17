@@ -7,6 +7,8 @@ import Script from 'next/script'
 import { MapPin, Phone, Mail, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu } from 'lucide-react'
 
 export default function Home() {
+  // Prefix for assets to work on GitHub Pages (/k27) and locally ('')
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/k27' : '')
   const [isVisible, setIsVisible] = useState(false)
   const [showReservationModal, setShowReservationModal] = useState(false)
   const [showGalleryModal, setShowGalleryModal] = useState(false)
@@ -16,10 +18,10 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
 
   const galleryImages = [
-    { src: '/images/pistas.jpg', alt: 'Pistas de Padel Principales', title: 'Pistas Profesionales' },
-    { src: '/images/pistas2.webp', alt: 'Vista General de las Pistas', title: 'Instalaciones Completas' },
-    { src: '/images/recepcion.webp', alt: 'Área de Recepción', title: 'Zona de Recepción' },
-    { src: '/images/chica-padel.jpg', alt: 'Jugadora en Acción', title: 'Experiencia de Juego' }
+    { src: `${prefix}/images/pistas.jpg`, alt: 'Pistas de Padel Principales', title: 'Pistas Profesionales' },
+    { src: `${prefix}/images/pistas2.webp`, alt: 'Vista General de las Pistas', title: 'Instalaciones Completas' },
+    { src: `${prefix}/images/recepcion.webp`, alt: 'Área de Recepción', title: 'Zona de Recepción' },
+    { src: `${prefix}/images/chica-padel.jpg`, alt: 'Jugadora en Acción', title: 'Experiencia de Juego' }
   ]
 
   useEffect(() => {
@@ -75,7 +77,7 @@ export default function Home() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <Image
-                src="/images/logo.webp"
+                src={`${prefix}/images/logo.webp`}
                 alt="K27 Padel Logo"
                 width={60}
                 height={60}
@@ -128,7 +130,7 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src="/images/pistas.jpg"
+            src={`${prefix}/images/pistas.jpg`}
             alt="Pistas de Padel K27"
             fill
             className="object-cover opacity-40"
@@ -218,7 +220,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <Image
-                src="/images/chica-padel.jpg"
+                src={`${prefix}/images/chica-padel.jpg`}
                 alt="Jugadora de Padel"
                 width={600}
                 height={400}
@@ -300,7 +302,7 @@ export default function Home() {
               className="bg-padel-gray rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/pistas2.webp"
+                src={`${prefix}/images/pistas2.webp`}
                 alt="Pistas de Padel"
                 width={400}
                 height={300}
@@ -322,7 +324,7 @@ export default function Home() {
               className="bg-padel-gray rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/recepcion.webp"
+                src={`${prefix}/images/recepcion.webp`}
                 alt="Recepción"
                 width={400}
                 height={300}
@@ -344,7 +346,7 @@ export default function Home() {
               className="bg-padel-gray rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/chica-padel.jpg"
+                src={`${prefix}/images/chica-padel.jpg`}
                 alt="Jugadora con Material de Padel"
                 width={400}
                 height={300}
@@ -498,7 +500,7 @@ export default function Home() {
             <div>
               <div className="flex items-center mb-4">
                 <Image
-                  src="/images/logo.webp"
+                  src={`${prefix}/images/logo.webp`}
                   alt="K27 Padel Logo"
                   width={40}
                   height={40}
@@ -725,7 +727,7 @@ export default function Home() {
           '@context': 'https://schema.org',
           '@type': 'SportsActivityLocation',
           name: 'K27 Padel',
-          image: ['/images/logo.webp'],
+          image: [`${prefix}/images/logo.webp`],
           url: (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
           telephone: '+34 91 123 45 67',
           address: {

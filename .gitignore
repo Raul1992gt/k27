@@ -1,1 +1,40 @@
-node_modules
+### Dependencies
+node_modules/
+
+### Next.js build outputs
+.next/
+out/
+.vercel/
+
+### Env files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+### Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+### Caches
+.eslintcache
+.stylelintcache
+.turbo/
+.cache/
+
+### Test coverage
+coverage/
+.nyc_output/
+
+### OS files
+.DS_Store
+Thumbs.db
+
+### IDE settings
+.vscode/
+.idea/
+
+### Misc
+dist/
+*.local
