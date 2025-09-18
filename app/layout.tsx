@@ -9,12 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://raul1992gt.github.io'
 
   return {
-    title: 'K27 Padel - Centro de Pádel Premium',
+    title: 'K27 Padel | Pádel en Esquivias (Toledo) · Pistas y Reservas',
     description:
-      'Descubre la experiencia de pádel más completa en nuestras instalaciones de última generación. Pistas profesionales, ambiente único y la mejor ubicación.',
-    keywords: 'padel, pistas de padel, deporte, centro deportivo, K27',
+      'K27 Padel en Esquivias (Toledo). Pistas de pádel profesionales, reservas rápidas y comunidad activa. A 45 min de Madrid por la A-4.',
+    keywords: 'pádel Toledo, pádel Esquivias, pádel Madrid, pistas de pádel Toledo, reservar pádel Toledo, club pádel Toledo, K27 Padel',
     metadataBase: new URL(siteUrl),
-    alternates: { canonical: '/' },
+    alternates: { canonical: prefix ? `${prefix}/` : '/' },
     icons: {
       icon: `${prefix}/images/logo.webp`,
       shortcut: `${prefix}/images/logo.webp`,
@@ -22,20 +22,20 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       type: 'website',
-      url: '/',
-      title: 'K27 Padel - Centro de Pádel Premium',
+      url: prefix ? `${prefix}/` : '/',
+      title: 'K27 Padel | Pádel en Esquivias (Toledo) · Pistas y Reservas',
       description:
-        'Descubre la experiencia de pádel más completa en nuestras instalaciones de última generación. Pistas profesionales, ambiente único y la mejor ubicación.',
+        'Club de pádel en Esquivias (Toledo). Pistas profesionales, reservas online y a 45 min de Madrid.',
       siteName: 'K27 Padel',
-      images: [`${prefix}/images/logo.webp`],
+      images: [`${prefix}/images/pistas2.webp`],
       locale: 'es_ES',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'K27 Padel - Centro de Pádel Premium',
+      title: 'K27 Padel | Pádel en Esquivias (Toledo)',
       description:
-        'Descubre la experiencia de pádel más completa en nuestras instalaciones de última generación. Pistas profesionales, ambiente único y la mejor ubicación.',
-      images: [`${prefix}/images/logo.webp`],
+        'Pistas profesionales y reservas online. A 45 min de Madrid por la A-4.',
+      images: [`${prefix}/images/pistas2.webp`],
     },
     robots: {
       index: true,

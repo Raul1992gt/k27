@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Script from 'next/script'
-import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu } from 'lucide-react'
+import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu, MessageCircle } from 'lucide-react'
 
 export default function Home() {
   // Prefix for assets to work on GitHub Pages (/k27) and locally ('')
@@ -194,6 +194,28 @@ export default function Home() {
         </motion.div>
       </section>
 
+      
+
+      {/* SEO snippet: Áreas y cercanía (discreto) */}
+      <section className="bg-padel-black py-8">
+        <div className="max-w-5xl mx-auto px-4 text-center text-gray-300">
+          <p className="mb-3">
+            Club de pádel en <span className="text-white font-semibold">Esquivias (Toledo)</span>, a ~45 minutos de Madrid por la A-4.
+          </p>
+          <ul className="flex flex-wrap gap-3 justify-center text-sm text-gray-400">
+            <li>
+              <a href="/padel-esquivias" className="px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Esquivias</a>
+            </li>
+            <li>
+              <a href="/padel-toledo" className="px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Toledo capital</a>
+            </li>
+            <li>
+              <a href="/padel-madrid" className="px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Sur de Madrid (Valdemoro, Pinto, Aranjuez, Illescas)</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* Nosotros Section */}
       <section id="nosotros" className="py-20 bg-padel-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -251,7 +273,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white">Comunidad Activa</h3>
-                  <p className="text-gray-400">Más de 500 jugadores activos</p>
+                  <p className="text-gray-400">Únete a una comunidad en crecimiento</p>
                 </div>
               </div>
 
@@ -452,7 +474,7 @@ export default function Home() {
                 <ul className="text-gray-400 space-y-2">
                   <li>• Desde Toledo: 15 minutos por la CM-4000</li>
                   <li>• Desde Madrid: 45 minutos por la A-4</li>
-                  <li>• Fácil acceso desde la autopista A-4</li>
+                  <li>• Fácil acceso desde la autovía A-4</li>
                 </ul>
               </div>
             </motion.div>
@@ -480,16 +502,118 @@ export default function Home() {
               <div className="text-center">
                 <h4 className="text-xl font-semibold text-white mb-4">Ubicación Privilegiada</h4>
                 <p className="text-gray-400 mb-6">
-                  En Esquivias (Toledo), con excelente acceso desde la A-4 y amplio parking gratuito para tu comodidad.
+                  En Esquivias (Toledo), con excelente acceso desde la A-4 y buena zona de aparcamiento para tu comodidad.
                 </p>
-                <button 
-                  onClick={() => window.open('https://maps.google.com/?q=' + encodeURIComponent('Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo'), '_blank')}
-                  className="bg-padel-red hover:bg-padel-red-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+                <a 
+                  href={'https://maps.google.com/?q=' + encodeURIComponent('Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-padel-red hover:bg-padel-red-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
                 >
                   Ver en Google Maps
-                </button>
+                </a>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section (moved above Footer) */}
+      <section id="faq" className="py-20 bg-padel-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-5xl font-bold mb-4">
+              <span className="gradient-text">PREGUNTAS FRECUENTES</span>
+            </h2>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              Resolvemos tus dudas sobre cómo llegar, reservar y disfrutar del pádel en Esquivias (Toledo), a 45 minutos de Madrid.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            {/* Item 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-padel-gray rounded-2xl border border-padel-red/20 overflow-hidden"
+            >
+              <details className="group">
+                <summary className="cursor-pointer select-none list-none p-6 flex items-center justify-between">
+                  <span className="text-white text-lg font-semibold">¿Dónde jugar pádel en Esquivias (Toledo)?</span>
+                  <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+                </summary>
+                <div className="px-6 pb-6 text-gray-300">
+                  K27 Padel está en Esquivias (Toledo), con pistas profesionales, reservas rápidas y parking gratuito.
+                </div>
+              </details>
+            </motion.div>
+
+            {/* Item 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="bg-padel-gray rounded-2xl border border-padel-red/20 overflow-hidden"
+            >
+              <details className="group">
+                <summary className="cursor-pointer select-none list-none p-6 flex items-center justify-between">
+                  <span className="text-white text-lg font-semibold">¿A qué distancia está desde Madrid?</span>
+                  <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+                </summary>
+                <div className="px-6 pb-6 text-gray-300">
+                  Aproximadamente 45 minutos por la A-4, con acceso sencillo desde el sur de Madrid (Valdemoro, Pinto, Aranjuez, Illescas).
+                </div>
+              </details>
+            </motion.div>
+
+            {/* Item 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-padel-gray rounded-2xl border border-padel-red/20 overflow-hidden"
+            >
+              <details className="group">
+                <summary className="cursor-pointer select-none list-none p-6 flex items-center justify-between">
+                  <span className="text-white text-lg font-semibold">¿Cómo reservar pista?</span>
+                  <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+                </summary>
+                <div className="px-6 pb-6 text-gray-300">
+                  Pulsa “Reservar online” para abrir el software de reservas o llama al <span className="text-white font-semibold">+34 618 913 615</span>.
+                </div>
+              </details>
+            </motion.div>
+
+            {/* Item 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="bg-padel-gray rounded-2xl border border-padel-red/20 overflow-hidden"
+            >
+              <details className="group">
+                <summary className="cursor-pointer select-none list-none p-6 flex items-center justify-between">
+                  <span className="text-white text-lg font-semibold">¿Cuál es el horario?</span>
+                  <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+                </summary>
+                <div className="px-6 pb-6 text-gray-300">
+                  Entre semana: 9:30–14:00 y 16:30–23:00. Fines de semana: 9:30–14:00 y 16:30–21:00.
+                </div>
+              </details>
+            </motion.div>
+
+            
           </div>
         </div>
       </section>
@@ -520,6 +644,8 @@ export default function Home() {
                 <li><a href="#nosotros" className="hover:text-padel-red transition-colors">Nosotros</a></li>
                 <li><a href="#recinto" className="hover:text-padel-red transition-colors">El Recinto</a></li>
                 <li><a href="#ubicacion" className="hover:text-padel-red transition-colors">Ubicación</a></li>
+                <li><a href="/privacidad" className="hover:text-padel-red transition-colors">Privacidad</a></li>
+                <li><a href="/terminos" className="hover:text-padel-red transition-colors">Términos</a></li>
               </ul>
             </div>
 
@@ -551,6 +677,9 @@ export default function Home() {
           <div className="border-t border-padel-red/20 mt-8 pt-8 text-center">
             <p className="text-gray-400">
               © 2024 K27 Padel. Todos los derechos reservados.
+            </p>
+            <p className="text-gray-500 text-sm mt-2">
+              Desarrollado por <a href="https://www.linkedin.com/in/raul-garcia-torrejon/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300">Raúl GT</a> · 2025
             </p>
           </div>
         </div>
@@ -636,6 +765,15 @@ export default function Home() {
                   className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white py-3 rounded-full font-semibold text-center transition-colors"
                 >
                   Llamar
+                </a>
+                <a
+                  href="https://wa.me/34618913615?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white py-3 rounded-full font-semibold text-center transition-colors inline-flex items-center justify-center gap-2"
+                  aria-label="Contactar por WhatsApp"
+                >
+                  <MessageCircle className="w-5 h-5" /> WhatsApp
                 </a>
               </div>
             </motion.div>
@@ -742,6 +880,8 @@ export default function Home() {
             postalCode: '45221',
             addressCountry: 'ES'
           },
+          areaServed: ['Toledo', 'Esquivias', 'Madrid'],
+          priceRange: '€€',
           openingHours: [
             'Mo-Fr 09:30-14:00',
             'Mo-Fr 16:30-23:00',
@@ -751,6 +891,48 @@ export default function Home() {
           sameAs: [
             '#', // Facebook URL to be provided
             '#', // Instagram URL to be provided
+          ]
+        })}
+      </Script>
+
+      {/* SEO: JSON-LD FAQPage */}
+      <Script id="ld-faq" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: '¿Dónde jugar pádel en Esquivias (Toledo)?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'K27 Padel está en Esquivias (Toledo), con pistas profesionales, reservas rápidas y parking gratuito.'
+              }
+            },
+            {
+              '@type': 'Question',
+              name: '¿A qué distancia está desde Madrid?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Aproximadamente 45 minutos por la A-4, con acceso sencillo desde el sur de Madrid (Valdemoro, Pinto, Aranjuez, Illescas).'
+              }
+            },
+            {
+              '@type': 'Question',
+              name: '¿Cómo reservar pista?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Pulsa “Reservar online” para abrir el software de reservas o llama al +34 618 913 615.'
+              }
+            },
+            {
+              '@type': 'Question',
+              name: '¿Cuál es el horario?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Entre semana: 9:30-14:00 y 16:30-23:00. Fines de semana: 9:30-14:00 y 16:30-21:00.'
+              }
+            }
           ]
         })}
       </Script>
