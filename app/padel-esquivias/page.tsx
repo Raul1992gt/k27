@@ -3,8 +3,8 @@ import { MapPin, Phone, ArrowRight, ArrowLeft } from 'lucide-react'
 import CommentIcon from '../components/CommentIcon'
 
 export const metadata: Metadata = {
-  title: 'Pádel en Esquivias (Toledo) | K27 Padel',
-  description: 'Juega pádel en Esquivias (Toledo) en K27 Padel. Pistas profesionales, reservas online y atención cercana. A 45 minutos de Madrid por la A-4.',
+  title: 'Pádel en Esquivias (Toledo) | Padel K27',
+  description: 'Juega pádel en Esquivias (Toledo) en Padel K27. Pistas profesionales, reservas online y atención cercana. A 45 minutos de Madrid por la A-4.',
 }
 
 export default function PadelEsquiviasPage() {
@@ -29,7 +29,7 @@ export default function PadelEsquiviasPage() {
           </nav>
           <h1 className="text-4xl md:text-6xl font-black mb-4"><span className="gradient-text">PÁDEL EN ESQUIVIAS</span></h1>
           <p className="text-gray-300 text-lg md:text-xl mb-6">
-            K27 Padel, tu club de pádel en Esquivias (Toledo). Pistas profesionales, reservas online y ambiente de club.
+          Padel K27, tu club de pádel en Esquivias (Toledo). Pistas profesionales, reservas online y ambiente de club.
           </p>
           {/* Feature chips */}
           <ul className="flex flex-wrap gap-2 mb-8 text-sm">

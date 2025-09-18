@@ -3,8 +3,8 @@ import { MapPin, Phone, ArrowRight, ArrowLeft } from 'lucide-react'
 import CommentIcon from '../components/CommentIcon'
 
 export const metadata: Metadata = {
-  title: 'Pádel sur de Madrid | K27 Padel',
-  description: '¿Buscas pádel cerca del sur de Madrid? K27 Padel en Esquivias (Toledo), a ~45 min por la A-4. Pistas profesionales y reservas online.',
+  title: 'Pádel sur de Madrid | Padel K27',
+  description: '¿Buscas pádel cerca del sur de Madrid? Padel K27 en Esquivias (Toledo), a ~45 min por la A-4. Pistas profesionales y reservas online.',
 }
 
 export default function PadelMadridPage() {
@@ -29,7 +29,7 @@ export default function PadelMadridPage() {
           </nav>
           <h1 className="text-4xl md:text-6xl font-black mb-4"><span className="gradient-text">PÁDEL SUR DE MADRID</span></h1>
           <p className="text-gray-300 text-lg md:text-xl mb-6">
-            Desde Valdemoro, Pinto o Aranjuez estás a ~15 minutos de K27 Padel por la A-4. Club con pistas profesionales y reservas online.
+            Desde Valdemoro, Pinto o Aranjuez estás a ~15 minutos de Padel K27 por la A-4. Club con pistas profesionales y reservas online.
           </p>
           {/* Feature chips */}
           <ul className="flex flex-wrap gap-2 mb-8 text-sm">

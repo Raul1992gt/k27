@@ -11,10 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
   return {
-    title: 'K27 Padel | Pádel en Esquivias (Toledo) · Pistas y Reservas',
+    title: 'Padel K27 | Pádel en Esquivias (Toledo) · Pistas y Reservas',
     description:
-      'K27 Padel en Esquivias (Toledo). Pistas de pádel profesionales, reservas rápidas y comunidad activa. A 45 min de Madrid por la A-4.',
-    keywords: 'pádel Toledo, pádel Esquivias, pádel Madrid, pistas de pádel Toledo, reservar pádel Toledo, club pádel Toledo, K27 Padel',
+      'Padel K27 en Esquivias (Toledo). Pistas de pádel profesionales, reservas rápidas y comunidad activa. A 45 min de Madrid por la A-4.',
+    keywords: 'pádel Toledo, pádel Esquivias, pádel Madrid, pistas de pádel Toledo, reservar pádel Toledo, club pádel Toledo, Padel K27',
     metadataBase: new URL(siteUrl),
     alternates: { canonical: prefix ? `${prefix}/` : '/' },
     icons: {
@@ -25,16 +25,16 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: 'website',
       url: prefix ? `${prefix}/` : '/',
-      title: 'K27 Padel | Pádel en Esquivias (Toledo) · Pistas y Reservas',
+      title: 'Padel K27 | Pádel en Esquivias (Toledo) · Pistas y Reservas',
       description:
         'Club de pádel en Esquivias (Toledo). Pistas profesionales, reservas online y a 45 min de Madrid.',
-      siteName: 'K27 Padel',
+      siteName: 'Padel K27',
       images: [`${prefix}/images/pistas2.webp`],
       locale: 'es_ES',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'K27 Padel | Pádel en Esquivias (Toledo)',
+      title: 'Padel K27 | Pádel en Esquivias (Toledo)',
       description:
         'Pistas profesionales y reservas online. A 45 min de Madrid por la A-4.',
       images: [`${prefix}/images/pistas2.webp`],

@@ -43,10 +43,10 @@ export default function Home() {
   }
 
   const galleryImages = [
-    { src: `${prefix}/images/pistas.jpg`, alt: 'Pistas de Padel Principales', title: 'Pistas Profesionales' },
+    { src: `${prefix}/images/pistas1.webp`, alt: 'Pistas de Padel Principales', title: 'Pistas Profesionales' },
     { src: `${prefix}/images/pistas2.webp`, alt: 'Vista General de las Pistas', title: 'Instalaciones Completas' },
     { src: `${prefix}/images/recepcion.webp`, alt: 'Área de Recepción', title: 'Zona de Recepción' },
-    { src: `${prefix}/images/chica-padel.jpg`, alt: 'Jugadora en Acción', title: 'Experiencia de Juego' }
+    { src: `${prefix}/images/fachada.webp`, alt: 'Fachada del Recinto', title: 'Experiencia de Juego' }
   ]
 
   useEffect(() => {
@@ -115,12 +115,12 @@ export default function Home() {
             <div className="flex items-center">
               <Image
                 src={`${prefix}/images/logo.webp`}
-                alt="K27 Padel Logo"
+                alt="Padel K27 Logo"
                 width={60}
                 height={60}
                 className="mr-3"
               />
-              <span className="text-2xl font-bold gradient-text">K27 PADEL</span>
+              <span className="text-2xl font-bold gradient-text">Padel K27</span>
             </div>
             <div className="hidden md:flex space-x-8">
               <button onClick={() => scrollToSection('inicio')} className="hover:text-padel-red transition-colors">Inicio</button>
@@ -167,7 +167,7 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src={`${prefix}/images/pistas.jpg`}
+            src={`${prefix}/images/pistas1.webp`}
             alt="Pistas de Padel K27"
             fill
             className="object-cover opacity-40"
@@ -279,8 +279,8 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <Image
-                src={`${prefix}/images/chica-padel.jpg`}
-                alt="Jugadora de Padel"
+                src={`${prefix}/images/fachada.webp`}
+                alt="Fachada del Recinto"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-2xl"
@@ -370,7 +370,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-3">Pistas Profesionales</h3>
                 <p className="text-gray-400">
-                  4 pistas de última generación con césped artificial premium y sistema de iluminación LED profesional.
+                  3 pistas de última generación con césped artificial premium y sistema de iluminación LED profesional.
                 </p>
               </div>
             </motion.div>
@@ -405,16 +405,16 @@ export default function Home() {
               className="bg-padel-gray rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src={`${prefix}/images/chica-padel.jpg`}
-                alt="Jugadora con Material de Padel"
+                src={`${prefix}/images/pistas1.webp`}
+                alt="Clases de Pádel"
                 width={400}
                 height={300}
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-white mb-3">Alquiler de Material</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">Clases de Pádel</h3>
                 <p className="text-gray-400">
-                  Palas profesionales, pelotas de calidad y todo el equipamiento necesario disponible para alquilar.
+                  Entrenamientos y clases para todos los niveles con monitores titulados. Sesiones individuales, por parejas y en grupos.
                 </p>
               </div>
             </motion.div>
@@ -588,7 +588,7 @@ export default function Home() {
                   <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
                 </summary>
                 <div className="px-6 pb-6 text-gray-300">
-                  K27 Padel está en Esquivias (Toledo), con pistas profesionales, reservas rápidas y parking gratuito.
+                 Padel K27 está en Esquivias (Toledo), con pistas profesionales, reservas rápidas y parking gratuito.
                 </div>
               </details>
             </motion.div>
@@ -663,12 +663,12 @@ export default function Home() {
               <div className="flex items-center mb-4">
                 <Image
                   src={`${prefix}/images/logo.webp`}
-                  alt="K27 Padel Logo"
+                  alt="Padel K27 Logo"
                   width={40}
                   height={40}
                   className="mr-3"
                 />
-                <span className="text-xl font-bold gradient-text">K27 PADEL</span>
+                <span className="text-xl font-bold gradient-text">Padel K27</span>
               </div>
               <p className="text-gray-400">
                 El centro de pádel más moderno de la Sagra. Vive la pasión del pádel con nosotros.
@@ -713,7 +713,7 @@ export default function Home() {
 
           <div className="border-t border-padel-red/20 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2024 K27 Padel. Todos los derechos reservados.
+              © 2024 Padel K27. Todos los derechos reservados.
             </p>
             <p className="text-gray-500 text-sm mt-2">
               Desarrollado por <a href="https://www.linkedin.com/in/raul-garcia-torrejon/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300">Raúl GT</a> · 2025
@@ -1002,7 +1002,7 @@ export default function Home() {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'SportsActivityLocation',
-          name: 'K27 Padel',
+          name: 'Padel K27',
           image: [`${prefix}/images/logo.webp`],
           url: (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
           telephone: '+34 618 913 615',
@@ -1040,7 +1040,7 @@ export default function Home() {
               name: '¿Dónde jugar pádel en Esquivias (Toledo)?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'K27 Padel está en Esquivias (Toledo), con pistas profesionales, reservas rápidas y parking gratuito.'
+                text: 'Padel K27 está en Esquivias (Toledo), con pistas profesionales, reservas rápidas y parking gratuito.'
               }
             },
             {

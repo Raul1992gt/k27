@@ -4,8 +4,8 @@ import { MapPin, Phone, ArrowRight, ArrowLeft } from 'lucide-react'
 import CommentIcon from '../components/CommentIcon'
 
 export const metadata: Metadata = {
-  title: 'Pádel en Toledo capital | K27 Padel',
-  description: '¿Buscas pádel en Toledo? K27 Padel (Esquivias) a 15–20 min de Toledo capital. Pistas profesionales y reservas online. Acceso rápido por CM-4000/A-42.',
+  title: 'Pádel en Toledo capital | Padel K27',
+  description: '¿Buscas pádel en Toledo? Padel K27 (Esquivias) a 15–20 min de Toledo capital. Pistas profesionales y reservas online. Acceso rápido por CM-4000/A-42.',
 }
 
 export default function PadelToledoPage() {
@@ -30,7 +30,7 @@ export default function PadelToledoPage() {
           </nav>
           <h1 className="text-4xl md:text-6xl font-black mb-4"><span className="gradient-text">PÁDEL EN TOLEDO</span></h1>
           <p className="text-gray-300 text-lg md:text-xl mb-8">
-            K27 Padel está a 15–20 minutos de Toledo capital. Pistas profesionales, ambiente de club y reservas online.
+           Padel K27 está a 15–20 minutos de Toledo capital. Pistas profesionales, ambiente de club y reservas online.
           </p>
           {/* Feature chips */}
           <ul className="flex flex-wrap gap-2 mb-8 text-sm">

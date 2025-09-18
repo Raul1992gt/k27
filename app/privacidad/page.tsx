@@ -10,7 +10,7 @@ export default function PrivacidadPage() {
           <p className="text-gray-300 mb-6">Última actualización: 2025-01-01</p>
 
           <div className="space-y-4 text-gray-300 leading-relaxed">
-            <p>Esta web informa de manera general sobre los servicios del club K27 Padel. Si nos contactas por teléfono/WhatsApp o mediante email, los datos facilitados se usarán únicamente para gestionar tu solicitud de información o reserva.</p>
+            <p>Esta web informa de manera general sobre los servicios del club Padel K27. Si nos contactas por teléfono/WhatsApp o mediante email, los datos facilitados se usarán únicamente para gestionar tu solicitud de información o reserva.</p>
             <p>Puedes ejercer tus derechos de acceso, rectificación o supresión escribiendo a nuestro contacto indicado en la sección de Ubicación/Contacto.</p>
             <p>Usamos métricas básicas de navegación (p. ej., analítica web) para mejorar la experiencia; no vendemos datos a terceros.</p>
           </div>
