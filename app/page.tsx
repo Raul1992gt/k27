@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Script from 'next/script'
-import { MapPin, Phone, Mail, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu } from 'lucide-react'
+import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu } from 'lucide-react'
 
 export default function Home() {
   // Prefix for assets to work on GitHub Pages (/k27) and locally ('')
@@ -396,7 +396,7 @@ export default function Home() {
               <span className="gradient-text">UBICACIÓN</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Estratégicamente ubicados en Esquivias, Toledo, con fácil acceso desde la A-4 y amplio estacionamiento gratuito.
+              Estratégicamente ubicados en Esquivias (Toledo) con fácil acceso y aparcamiento.
             </p>
           </motion.div>
 
@@ -415,8 +415,8 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Dirección</h3>
                   <p className="text-gray-400 text-lg">
-                    Plaza Industrial Ctra. Borox<br />
-                    45221 Esquivias, Toledo, España
+                    Plaza Industrial Ctra. Borox Call, 22<br />
+                    45221 Esquivias, Toledo
                   </p>
                 </div>
               </div>
@@ -428,7 +428,9 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Horarios</h3>
                   <p className="text-gray-400 text-lg">
-                    Lunes a Domingo: 7:00 - 23:00
+                    Entre semana: 9:30 - 14:00 y 16:30 - 23:00
+                    <br />
+                    Fines de semana: 9:30 - 14:00 y 16:30 - 21:00
                   </p>
                 </div>
               </div>
@@ -440,8 +442,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Contacto</h3>
                   <p className="text-gray-400 text-lg">
-                    +34 91 123 45 67<br />
-                    info@k27padel.com
+                    +34 618 913 615
                   </p>
                 </div>
               </div>
@@ -465,7 +466,7 @@ export default function Home() {
             >
               <div className="aspect-video rounded-xl overflow-hidden mb-6">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.2!2d-3.7!3d40.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPlaza%20Industrial%20Ctra.%20Borox%2C%20Esquivias%2C%20Toledo%2C%20Spain!5e0!3m2!1sen!2ses!4v1634567890123!5m2!1sen!2ses"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent('Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo')}&output=embed`}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -479,10 +480,10 @@ export default function Home() {
               <div className="text-center">
                 <h4 className="text-xl font-semibold text-white mb-4">Ubicación Privilegiada</h4>
                 <p className="text-gray-400 mb-6">
-                  En Esquivias, Toledo, con excelente acceso desde la A-4 y amplio parking gratuito para tu comodidad.
+                  En Esquivias (Toledo), con excelente acceso desde la A-4 y amplio parking gratuito para tu comodidad.
                 </p>
                 <button 
-                  onClick={() => window.open('https://maps.google.com/?q=Plaza+Industrial+Ctra.+Borox,+Esquivias,+Toledo,+Spain', '_blank')}
+                  onClick={() => window.open('https://maps.google.com/?q=' + encodeURIComponent('Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo'), '_blank')}
                   className="bg-padel-red hover:bg-padel-red-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
                 >
                   Ver en Google Maps
@@ -585,7 +586,7 @@ export default function Home() {
                   <Phone className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Reservar Pista</h3>
-                <p className="text-gray-400">Llámanos para reservar tu pista</p>
+                <p className="text-gray-400">Reserva online o llámanos en el horario indicado</p>
               </div>
               
               <div className="space-y-4">
@@ -594,17 +595,17 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-padel-red" />
                     <div>
                       <p className="text-white font-semibold">Teléfono</p>
-                      <p className="text-padel-red text-lg font-bold">+34 91 123 45 67</p>
+                      <p className="text-padel-red text-lg font-bold">+34 618 913 615</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="bg-padel-black rounded-xl p-4 border border-padel-red/20">
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-padel-red" />
+                    <MapPin className="w-5 h-5 text-padel-red" />
                     <div>
-                      <p className="text-white font-semibold">Email</p>
-                      <p className="text-padel-red font-bold">reservas@k27padel.com</p>
+                      <p className="text-white font-semibold">Dirección</p>
+                      <p className="text-gray-300">Plaza Industrial Ctra. Borox Call, 22<br />45221 Esquivias, Toledo</p>
                     </div>
                   </div>
                 </div>
@@ -614,24 +615,27 @@ export default function Home() {
                     <Clock className="w-5 h-5 text-padel-red" />
                     <div>
                       <p className="text-white font-semibold">Horario de Reservas</p>
-                      <p className="text-gray-300">Lunes a Domingo: 7:00 - 23:00</p>
+                      <p className="text-gray-300">Entre semana: 9:30 - 14:00 y 16:30 - 23:00</p>
+                      <p className="text-gray-300">Fines de semana: 9:30 - 14:00 y 16:30 - 21:00</p>
                     </div>
                   </div>
                 </div>
               </div>
               
               <div className="mt-6 flex space-x-3">
-                <a 
-                  href="tel:+34911234567" 
-                  className="flex-1 bg-padel-red hover:bg-padel-red-dark text-white py-3 rounded-full font-semibold text-center transition-colors"
+                <a
+                  href="https://toletvmpadelindoor.es/?utm_source=k27-web&utm_medium=cta&utm_campaign=reservas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-white text-padel-red hover:bg-gray-100 py-3 rounded-full font-semibold text-center transition-colors"
                 >
-                  Llamar Ahora
+                  Reservar online
                 </a>
                 <a 
-                  href="mailto:reservas@k27padel.com" 
+                  href="tel:+34618913615" 
                   className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white py-3 rounded-full font-semibold text-center transition-colors"
                 >
-                  Enviar Email
+                  Llamar
                 </a>
               </div>
             </motion.div>
@@ -729,21 +733,21 @@ export default function Home() {
           name: 'K27 Padel',
           image: [`${prefix}/images/logo.webp`],
           url: (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-          telephone: '+34 91 123 45 67',
+          telephone: '+34 618 913 615',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Plaza Industrial Ctra. Borox',
+            streetAddress: 'Plaza Industrial Ctra. Borox Call, 22',
             addressLocality: 'Esquivias',
             addressRegion: 'Toledo',
             postalCode: '45221',
             addressCountry: 'ES'
           },
-          openingHours: ['Mo-Su 07:00-23:00'],
-          geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 40.1,
-            longitude: -3.7
-          },
+          openingHours: [
+            'Mo-Fr 09:30-14:00',
+            'Mo-Fr 16:30-23:00',
+            'Sa-Su 09:30-14:00',
+            'Sa-Su 16:30-21:00'
+          ],
           sameAs: [
             '#', // Facebook URL to be provided
             '#', // Instagram URL to be provided
