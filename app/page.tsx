@@ -53,6 +53,18 @@ export default function Home() {
     setIsVisible(true)
   }, [])
 
+  // Keyboard navigation for gallery on desktop
+  useEffect(() => {
+    if (!showGalleryModal) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prevImage()
+      if (e.key === 'ArrowRight') nextImage()
+      if (e.key === 'Escape') closeModals()
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [showGalleryModal])
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length)
   }
@@ -905,6 +917,46 @@ export default function Home() {
                     <h4 className="text-white text-lg md:text-xl font-bold">{galleryImages[currentImageIndex].title}</h4>
                     <p className="text-gray-300 text-sm md:text-base">{galleryImages[currentImageIndex].alt}</p>
                   </div>
+                  {/* In-image close button for better discoverability */}
+                  <button
+                    onClick={closeModals}
+                    className="absolute top-2 right-2 z-20 bg-black/50 hover:bg-black/60 text-white rounded-full p-1.5"
+                    aria-label="Cerrar"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                  {/* Decorative arrows for desktop (do not intercept clicks) */}
+                  <div className="flex absolute inset-y-0 left-2 md:left-3 items-center pointer-events-none">
+                    <div className="bg-black/35 md:bg-black/45 rounded-full p-1.5 md:p-2">
+                      <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-white/70 md:text-white/80" />
+                    </div>
+                  </div>
+                  <div className="flex absolute inset-y-0 right-2 md:right-3 items-center pointer-events-none">
+                    <div className="bg-black/35 md:bg-black/45 rounded-full p-1.5 md:p-2">
+                      <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-white/70 md:text-white/80" />
+                    </div>
+                  </div>
+                  {/* Click-to-advance on desktop when not zoomed */}
+                  {/* Mobile tappable zones (left/right) */}
+                  <div
+                    className="absolute inset-y-0 left-0 w-1/2 md:hidden"
+                    onClick={() => { if (scale === 1) prevImage() }}
+                    aria-label="Anterior"
+                  />
+                  <div
+                    className="absolute inset-y-0 right-0 w-1/2 md:hidden"
+                    onClick={() => { if (scale === 1) nextImage() }}
+                    aria-label="Siguiente"
+                  />
+                  <div
+                    className="hidden md:block absolute inset-0"
+                    onClick={(e) => {
+                      if (scale !== 1) return
+                      const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect()
+                      const mid = rect.left + rect.width / 2
+                      if (e.clientX < mid) prevImage(); else nextImage()
+                    }}
+                  />
                 </div>
                 
                 {/* Navigation buttons */}
