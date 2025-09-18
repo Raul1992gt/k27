@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
-const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || (isProd ? '/k27' : '')
+// Only apply basePath/assetPrefix when explicitly provided (e.g., GitHub Pages)
+const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 const nextConfig = {
   // Required for GitHub Pages static hosting

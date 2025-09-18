@@ -7,8 +7,8 @@ import Script from 'next/script'
 import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu, MessageCircle, Maximize2, Minimize2 } from 'lucide-react'
 
 export default function Home() {
-  // Prefix for assets to work on GitHub Pages (/k27) and locally ('')
-  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/k27' : '')
+  // Prefix for assets (only set when deploying to GitHub Pages)
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
   const [isVisible, setIsVisible] = useState(false)
   const [showReservationModal, setShowReservationModal] = useState(false)
   const [showGalleryModal, setShowGalleryModal] = useState(false)

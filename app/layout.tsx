@@ -5,8 +5,10 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export async function generateMetadata(): Promise<Metadata> {
-  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/k27' : '')
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://raul1992gt.github.io'
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
   return {
     title: 'K27 Padel | Pádel en Esquivias (Toledo) · Pistas y Reservas',

@@ -1,7 +1,7 @@
 'use client'
 
 export default function TerminosPage() {
-  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/k27' : '')
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
   return (
     <main className="min-h-screen bg-padel-black text-white">
       <section className="py-16">
