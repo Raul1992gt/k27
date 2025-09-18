@@ -644,8 +644,8 @@ export default function Home() {
                 <li><a href="#nosotros" className="hover:text-padel-red transition-colors">Nosotros</a></li>
                 <li><a href="#recinto" className="hover:text-padel-red transition-colors">El Recinto</a></li>
                 <li><a href="#ubicacion" className="hover:text-padel-red transition-colors">Ubicación</a></li>
-                <li><a href="/privacidad" className="hover:text-padel-red transition-colors">Privacidad</a></li>
-                <li><a href="/terminos" className="hover:text-padel-red transition-colors">Términos</a></li>
+                <li><a href={`${prefix}/privacidad`} className="hover:text-padel-red transition-colors">Privacidad</a></li>
+                <li><a href={`${prefix}/terminos`} className="hover:text-padel-red transition-colors">Términos</a></li>
               </ul>
             </div>
 
