@@ -76,7 +76,7 @@ export default function PadelEsquiviasPage() {
             <ul className="list-disc pl-5 text-gray-300 space-y-2">
               <li>Pistas profesionales con iluminación LED.</li>
               <li>Partidos entre semana y fines de semana.</li>
-              <li>Reserva online o por teléfono al <span className="text-white font-semibold">+34 618 913 615</span>.</li>
+              <li>Reserva online o por teléfono.</li>
             </ul>
           </div>
 
