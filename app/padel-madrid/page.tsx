@@ -9,11 +9,12 @@ export const metadata: Metadata = {
 
 export default function PadelMadridPage() {
   const bookingUrl = 'https://toletvmpadelindoor.es/?utm_source=k27-web&utm_medium=landing-madrid&utm_campaign=reservas'
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/k27' : '')
   return (
     <main className="min-h-screen bg-padel-black text-white">
       <div className="sticky top-0 z-10 w-full bg-padel-black/90 backdrop-blur-md border-b border-padel-red/20">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="/" className="inline-flex items-center text-gray-300 hover:text-white transition-colors">
+          <a href={`${prefix}/`} className="inline-flex items-center text-gray-300 hover:text-white transition-colors">
             <ArrowLeft className="w-5 h-5 mr-2" /> Volver al inicio
           </a>
         </div>
@@ -22,7 +23,7 @@ export default function PadelMadridPage() {
         <div className="max-w-5xl mx-auto px-4">
           {/* Breadcrumb visible */}
           <nav aria-label="Breadcrumb" className="text-sm text-gray-400 mb-4">
-            <a href="/" className="hover:text-white">Inicio</a>
+            <a href={`${prefix}/`} className="hover:text-white">Inicio</a>
             <span className="mx-2">/</span>
             <span className="text-white">Pádel sur de Madrid</span>
           </nav>

@@ -204,13 +204,13 @@ export default function Home() {
           </p>
           <ul className="flex flex-wrap gap-3 justify-center text-sm text-gray-400">
             <li>
-              <a href={`${prefix}/padel-esquivias`} className="px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Esquivias</a>
+              <a href={`${prefix}/padel-esquivias`} className="inline-block px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Esquivias</a>
             </li>
             <li>
-              <a href={`${prefix}/padel-toledo`} className="px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Toledo capital</a>
+              <a href={`${prefix}/padel-toledo`} className="inline-block px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Toledo capital</a>
             </li>
             <li>
-              <a href={`${prefix}/padel-madrid`} className="px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Sur de Madrid (Valdemoro, Pinto, Aranjuez, Illescas)</a>
+              <a href={`${prefix}/padel-madrid`} className="inline-block px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Sur de Madrid (Valdemoro, Pinto, Aranjuez, Illescas)</a>
             </li>
           </ul>
         </div>
