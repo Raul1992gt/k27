@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Script from 'next/script'
-import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu, MessageCircle } from 'lucide-react'
+import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu, MessageCircle, Maximize2, Minimize2 } from 'lucide-react'
 
 export default function Home() {
   // Prefix for assets to work on GitHub Pages (/k27) and locally ('')
@@ -16,6 +16,31 @@ export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
+
+  // Gallery zoom/fullscreen state
+  const imageContainerRef = useRef<HTMLDivElement | null>(null)
+  const [scale, setScale] = useState(1)
+  const [isFullscreen, setIsFullscreen] = useState(false)
+  const pinchStartDistRef = useRef<number | null>(null)
+  const swipeStartYRef = useRef<number | null>(null)
+
+  const resetZoom = () => setScale(1)
+
+  const toggleFullscreen = async () => {
+    try {
+      const el = imageContainerRef.current
+      if (!el) return
+      if (!document.fullscreenElement) {
+        await el.requestFullscreen()
+        setIsFullscreen(true)
+      } else {
+        await document.exitFullscreen()
+        setIsFullscreen(false)
+      }
+    } catch (_) {
+      // ignore
+    }
+  }
 
   const galleryImages = [
     { src: `${prefix}/images/pistas.jpg`, alt: 'Pistas de Padel Principales', title: 'Pistas Profesionales' },
@@ -751,30 +776,32 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="mt-6 flex space-x-3">
+              <div className="mt-6 space-y-3">
                 <a
                   href="https://toletvmpadelindoor.es/?utm_source=k27-web&utm_medium=cta&utm_campaign=reservas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-white text-padel-red hover:bg-gray-100 py-3 rounded-full font-semibold text-center transition-colors"
+                  className="w-full bg-white text-padel-red hover:bg-gray-100 h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
                 >
                   Reservar online
                 </a>
-                <a 
-                  href="tel:+34618913615" 
-                  className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white py-3 rounded-full font-semibold text-center transition-colors"
-                >
-                  Llamar
-                </a>
-                <a
-                  href="https://wa.me/34618913615?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white py-3 rounded-full font-semibold text-center transition-colors inline-flex items-center justify-center gap-2"
-                  aria-label="Contactar por WhatsApp"
-                >
-                  <MessageCircle className="w-5 h-5" /> WhatsApp
-                </a>
+                <div className="flex gap-3">
+                  <a 
+                    href="tel:+34618913615" 
+                    className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
+                  >
+                    Llamar
+                  </a>
+                  <a
+                    href="https://wa.me/34618913615?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2"
+                    aria-label="Contactar por WhatsApp"
+                  >
+                    <MessageCircle className="w-5 h-5" /> WhatsApp
+                  </a>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -796,7 +823,7 @@ export default function Home() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="bg-padel-gray rounded-2xl p-6 max-w-4xl w-full border border-padel-red/20 relative"
+              className="bg-padel-gray rounded-2xl p-4 md:p-6 max-w-lg md:max-w-4xl w-full border border-padel-red/20 relative"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -805,54 +832,108 @@ export default function Home() {
               >
                 <X className="w-6 h-6" />
               </button>
+              {/* Fullscreen toggle */}
+              <button
+                onClick={toggleFullscreen}
+                className="absolute top-4 left-4 text-gray-400 hover:text-white transition-colors z-10"
+                aria-label={isFullscreen ? 'Salir de pantalla completa' : 'Pantalla completa'}
+              >
+                {isFullscreen ? <Minimize2 className="w-6 h-6" /> : <Maximize2 className="w-6 h-6" />}
+              </button>
               
-              <div className="text-center mb-6">
-                <h3 className="text-3xl font-bold gradient-text mb-2">Nuestras Instalaciones</h3>
-                <p className="text-gray-400">Descubre nuestras instalaciones de primera clase</p>
+              <div className="text-center mb-4 md:mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold gradient-text mb-1 md:mb-2">Nuestras Instalaciones</h3>
+                <p className="text-gray-400 text-sm md:text-base">Descubre nuestras instalaciones de primera clase</p>
               </div>
               
               <div className="relative">
-                <div className="aspect-video relative overflow-hidden rounded-xl">
+                <div
+                  ref={imageContainerRef}
+                  className="relative overflow-hidden rounded-xl w-full h-56 sm:h-64 md:h-auto aspect-video touch-none"
+                  onTouchStart={(e) => {
+                    if (e.touches.length === 1) {
+                      ;(window as any)._gTouchX = e.touches[0].clientX
+                      swipeStartYRef.current = e.touches[0].clientY
+                    } else if (e.touches.length === 2) {
+                      const dx = e.touches[0].clientX - e.touches[1].clientX
+                      const dy = e.touches[0].clientY - e.touches[1].clientY
+                      pinchStartDistRef.current = Math.hypot(dx, dy)
+                    }
+                  }}
+                  onTouchMove={(e) => {
+                    if (e.touches.length === 2 && pinchStartDistRef.current) {
+                      const dx = e.touches[0].clientX - e.touches[1].clientX
+                      const dy = e.touches[0].clientY - e.touches[1].clientY
+                      const dist = Math.hypot(dx, dy)
+                      const ratio = dist / pinchStartDistRef.current
+                      const nextScale = Math.min(3, Math.max(1, ratio * scale))
+                      setScale(nextScale)
+                    }
+                  }}
+                  onTouchEnd={(e) => {
+                    // swipe left/right
+                    const startX = (window as any)._gTouchX || 0
+                    if (startX && e.changedTouches.length) {
+                      const endX = e.changedTouches[0].clientX
+                      const deltaX = endX - startX
+                      if (Math.abs(deltaX) > 40 && scale === 1) {
+                        deltaX > 0 ? prevImage() : nextImage()
+                      }
+                      ;(window as any)._gTouchX = 0
+                    }
+                    // swipe down to close
+                    const startY = swipeStartYRef.current
+                    if (startY && e.changedTouches.length) {
+                      const endY = e.changedTouches[0].clientY
+                      if (endY - startY > 80 && scale === 1) closeModals()
+                      swipeStartYRef.current = null
+                    }
+                    // reset pinch state
+                    pinchStartDistRef.current = null
+                  }}
+                  onDoubleClick={() => setScale((s) => (s === 1 ? 2 : 1))}
+                >
                   <Image
                     src={galleryImages[currentImageIndex].src}
                     alt={galleryImages[currentImageIndex].alt}
                     fill
                     className="object-cover"
+                    style={{ transform: `scale(${scale})`, transition: 'transform 0.1s ease-out' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <h4 className="text-white text-xl font-bold">{galleryImages[currentImageIndex].title}</h4>
-                    <p className="text-gray-300">{galleryImages[currentImageIndex].alt}</p>
+                  <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4">
+                    <h4 className="text-white text-lg md:text-xl font-bold">{galleryImages[currentImageIndex].title}</h4>
+                    <p className="text-gray-300 text-sm md:text-base">{galleryImages[currentImageIndex].alt}</p>
                   </div>
                 </div>
                 
                 {/* Navigation buttons */}
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-padel-red/80 hover:bg-padel-red text-white p-2 rounded-full transition-colors"
+                  className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-padel-red/80 hover:bg-padel-red text-white p-2 md:p-2.5 rounded-full transition-colors"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-padel-red/80 hover:bg-padel-red text-white p-2 rounded-full transition-colors"
+                  className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-padel-red/80 hover:bg-padel-red text-white p-2 md:p-2.5 rounded-full transition-colors"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
                 
                 {/* Image counter */}
-                <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                <div className="absolute top-2 md:top-4 left-2 md:left-4 bg-black/50 text-white px-2.5 py-0.5 md:px-3 md:py-1 rounded-full text-xs md:text-sm">
                   {currentImageIndex + 1} / {galleryImages.length}
                 </div>
               </div>
               
               {/* Thumbnail navigation */}
-              <div className="flex justify-center space-x-2 mt-4">
+              <div className="flex justify-center space-x-2 mt-3 md:mt-4">
                 {galleryImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
+                    className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-colors ${
                       index === currentImageIndex ? 'bg-padel-red' : 'bg-gray-600 hover:bg-gray-500'
                     }`}
                   />
