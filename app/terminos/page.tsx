@@ -1,6 +1,7 @@
 'use client'
 
 export default function TerminosPage() {
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/k27' : '')
   return (
     <main className="min-h-screen bg-padel-black text-white">
       <section className="py-16">
@@ -15,7 +16,7 @@ export default function TerminosPage() {
           </div>
 
           <div className="mt-10">
-            <a href="/" className="underline text-gray-400 hover:text-white">Volver al inicio</a>
+            <a href={`${prefix}/`} className="underline text-gray-400 hover:text-white">Volver al inicio</a>
           </div>
         </div>
       </section>
