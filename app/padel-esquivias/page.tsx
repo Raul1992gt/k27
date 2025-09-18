@@ -28,9 +28,16 @@ export default function PadelEsquiviasPage() {
             <span className="text-white">Pádel en Esquivias</span>
           </nav>
           <h1 className="text-4xl md:text-6xl font-black mb-4"><span className="gradient-text">PÁDEL EN ESQUIVIAS</span></h1>
-          <p className="text-gray-300 text-lg md:text-xl mb-8">
+          <p className="text-gray-300 text-lg md:text-xl mb-6">
             K27 Padel, tu club de pádel en Esquivias (Toledo). Pistas profesionales, reservas online y ambiente de club.
           </p>
+          {/* Feature chips */}
+          <ul className="flex flex-wrap gap-2 mb-8 text-sm">
+            <li className="px-3 py-1 rounded-full border border-padel-red/30 text-gray-300">Pistas Pro</li>
+            <li className="px-3 py-1 rounded-full border border-padel-red/30 text-gray-300">Iluminación LED</li>
+            <li className="px-3 py-1 rounded-full border border-padel-red/30 text-gray-300">Partidos nivelados</li>
+            <li className="px-3 py-1 rounded-full border border-padel-red/30 text-gray-300">Reserva fácil</li>
+          </ul>
           <div className="flex flex-wrap gap-3 mb-10">
             <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-white text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-flex items-center">
               Reservar online <ArrowRight className="w-5 h-5 ml-2" />
