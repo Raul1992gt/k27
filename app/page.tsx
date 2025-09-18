@@ -798,12 +798,6 @@ export default function Home() {
                   Reservar online
                 </a>
                 <div className="flex gap-3">
-                  <a 
-                    href="tel:+34618913615" 
-                    className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
-                  >
-                    Llamar
-                  </a>
                   <a
                     href="https://wa.me/34618913615?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
                     target="_blank"
@@ -812,6 +806,13 @@ export default function Home() {
                     aria-label="Contactar por WhatsApp"
                   >
                     <MessageCircle className="w-5 h-5" /> WhatsApp
+                  </a>
+                  <a 
+                    href="tel:+34618913615" 
+                    className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2"
+                    aria-label="Llamar por teléfono"
+                  >
+                    <Phone className="w-5 h-5" /> Llamar
                   </a>
                 </div>
               </div>
