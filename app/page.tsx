@@ -370,7 +370,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-3">Pistas Profesionales</h3>
                 <p className="text-gray-400">
-                  3 pistas de última generación con césped artificial premium y sistema de iluminación LED profesional.
+                  3 pistas de última generación y sistema de iluminación LED profesional.
                 </p>
               </div>
             </motion.div>
