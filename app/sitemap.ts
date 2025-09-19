@@ -7,43 +7,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
   return [
     {
-      url: `${base}/`,
+      url: `https://www.padelk27.es/`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: `${base}/padel-esquivias`,
+      url: `https://www.padelk27.es/padel-esquivias`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${base}/padel-toledo`,
+      url: `https://www.padelk27.es/padel-toledo`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${base}/padel-madrid`,
+      url: `https://www.padelk27.es/padel-madrid`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${base}/#nosotros`,
+      url: `https://www.padelk27.es/#nosotros`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${base}/#recinto`,
+      url: `https://www.padelk27.es/#recinto`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${base}/#ubicacion`,
+      url: `https://www.padelk27.es/#ubicacion`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
