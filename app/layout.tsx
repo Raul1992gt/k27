@@ -88,6 +88,20 @@ export default function RootLayout({
             </div>
           </a>
         )}
+        {!mystery && (
+          <a
+            href="https://www.instagram.com/padelk27/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Síguenos en Instagram"
+            className="fixed left-1/2 -translate-x-1/2 bottom-[5vh] z-[9999] inline-flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 rounded-full bg-padel-black/75 border border-padel-red/60 backdrop-blur-md shadow-xl hover:bg-padel-black/85 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-padel-red/70"
+          >
+            <span className="inline-flex w-7 h-7 md:w-8 md:h-8 items-center justify-center rounded-full bg-white/10 ring-2 ring-white/20 icon-breathe">
+              <Instagram className="w-4 h-4 md:w-5 md:h-5" />
+            </span>
+            <span className="text-sm md:text-base font-semibold">Síguenos en Instagram</span>
+          </a>
+        )}
         {children}
       </body>
     </html>
