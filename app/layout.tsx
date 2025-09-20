@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Script from 'next/script'
 import { Instagram } from 'lucide-react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -12,9 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
   return {
-    title: 'Padel K27 | Pádel en Esquivias (Toledo) · Pistas y Reservas',
+    title: 'Padel K27 (PadelK27) | Pádel en Esquivias (Toledo) · Sur de Madrid · Reservas',
     description:
-      'Padel K27 en Esquivias (Toledo). Pistas de pádel profesionales, reservas rápidas y comunidad activa. A 45 min de Madrid por la A-4.',
+      'Padel K27 (PadelK27) en Esquivias (Toledo). Pistas de pádel profesionales, reservas rápidas y comunidad activa. A ~45 min del sur de Madrid por la A-4.',
     keywords: 'pádel Toledo, pádel Esquivias, pádel Madrid, pistas de pádel Toledo, reservar pádel Toledo, club pádel Toledo, Padel K27',
     metadataBase: new URL(siteUrl),
     alternates: { canonical: prefix ? `${prefix}/` : '/' },
@@ -26,18 +27,18 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: 'website',
       url: prefix ? `${prefix}/` : '/',
-      title: 'Padel K27 | Pádel en Esquivias (Toledo) · Pistas y Reservas',
+      title: 'Padel K27 (PadelK27) | Pádel en Esquivias (Toledo) · Sur de Madrid · Reservas',
       description:
-        'Club de pádel en Esquivias (Toledo). Pistas profesionales, reservas online y a 45 min de Madrid.',
+        'Club de pádel en Esquivias (Toledo), a ~45 min del sur de Madrid. Pistas profesionales y reservas online.',
       siteName: 'Padel K27',
       images: [`${prefix}/images/pistas2.webp`],
       locale: 'es_ES',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Padel K27 | Pádel en Esquivias (Toledo)',
+      title: 'Padel K27 (PadelK27) | Pádel en Esquivias (Toledo)',
       description:
-        'Pistas profesionales y reservas online. A 45 min de Madrid por la A-4.',
+        'Pistas profesionales y reservas online. A ~45 min del sur de Madrid por la A-4.',
       images: [`${prefix}/images/pistas2.webp`],
     },
     robots: {
@@ -60,9 +61,77 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const mystery = process.env.NEXT_PUBLIC_MYSTERY_MODE === '1'
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.className} bg-padel-black text-white antialiased ${mystery ? 'mystery' : ''}`}>
+        {/* SEO: Structured Data (LocalBusiness) */}
+        <Script id="ld-localbusiness" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SportsActivityLocation',
+            name: 'Padel K27',
+            alternateName: 'PadelK27',
+            url:
+              process.env.NEXT_PUBLIC_SITE_URL ||
+              (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
+            image: [`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/pistas2.webp`],
+            telephone: '+34 618 913 615',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Plaza Industrial Ctra. Borox Call, 22',
+              addressLocality: 'Esquivias',
+              postalCode: '45221',
+              addressRegion: 'Toledo',
+              addressCountry: 'ES',
+            },
+            areaServed: [
+              'Esquivias',
+              'Toledo',
+              'Sur de Madrid',
+              'Valdemoro',
+              'Pinto',
+              'Aranjuez',
+              'Illescas',
+            ],
+            sameAs: ['https://www.instagram.com/padelk27/'],
+          })}
+        </Script>
+        {/* SEO: Organization (logo for brand in Google) */}
+        <Script id="ld-organization" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Padel K27',
+            alternateName: 'PadelK27',
+            url: siteUrl,
+            logo: `${siteUrl}${prefix}/images/logo.webp`,
+            sameAs: ['https://www.instagram.com/padelk27/'],
+          })}
+        </Script>
+        {/* SEO: Structured Data (Website) */}
+        <Script id="ld-website" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Padel K27',
+            alternateName: 'PadelK27',
+            url:
+              process.env.NEXT_PUBLIC_SITE_URL ||
+              (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: (
+                process.env.NEXT_PUBLIC_SITE_URL ||
+                (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+              ) + '/?q={search_term_string}',
+              'query-input': 'required name=search_term_string',
+            },
+          })}
+        </Script>
         {mystery && (
           <a
             href="https://www.instagram.com/padelk27/"

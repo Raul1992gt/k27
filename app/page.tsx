@@ -238,9 +238,12 @@ export default function Home() {
       <section className="bg-padel-black py-8">
         <div className="max-w-5xl mx-auto px-4 text-center text-gray-300">
           <p className="mb-3">
-            Club de pádel en <span className="text-white font-semibold">Esquivias (Toledo)</span>, a ~45 minutos de Madrid por la A-4.
+            <span className="text-white font-semibold">Padel K27</span> (<span className="text-white font-semibold">PadelK27</span>) es tu club de pádel en <span className="text-white font-semibold">Esquivias (Toledo)</span>, a ~45 minutos del <span className="text-white font-semibold">sur de Madrid</span> por la A-4.
           </p>
           <ul className="flex flex-wrap gap-3 justify-center text-sm text-gray-400">
+            <li>
+              <a href={`${prefix}/`} className="inline-block px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">PadelK27</a>
+            </li>
             <li>
               <a href={`${prefix}/padel-esquivias`} className="inline-block px-3 py-1 rounded-full border border-padel-red/30 hover:bg-padel-red/10 hover:text-white transition-colors">Esquivias</a>
             </li>
@@ -281,7 +284,7 @@ export default function Home() {
             >
               <Image
                 src={`${prefix}/images/fachada.webp`}
-                alt="Fachada del Recinto"
+                alt="Fachada de Padel K27 (PadelK27) en Esquivias, Toledo"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-2xl"
@@ -300,7 +303,7 @@ export default function Home() {
                   <Trophy className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Excelencia Deportiva</h3>
+                  <h3 className="text-xl font-semibold text-white">Excelencia Deportiva en PadelK27</h3>
                   <p className="text-gray-400">Instalaciones de nivel profesional</p>
                 </div>
               </div>
@@ -310,7 +313,7 @@ export default function Home() {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Comunidad Activa</h3>
+                  <h3 className="text-xl font-semibold text-white">Comunidad Activa en Padel K27</h3>
                   <p className="text-gray-400">Únete a una comunidad en crecimiento</p>
                 </div>
               </div>
@@ -320,7 +323,7 @@ export default function Home() {
                   <Star className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Experiencia Premium</h3>
+                  <h3 className="text-xl font-semibold text-white">Experiencia Premium en el sur de Madrid y Toledo</h3>
                   <p className="text-gray-400">Servicio personalizado y de calidad</p>
                 </div>
               </div>
@@ -363,7 +366,7 @@ export default function Home() {
             >
               <Image
                 src={`${prefix}/images/pistas2.webp`}
-                alt="Pistas de Padel"
+                alt="Pistas de pádel en Padel K27 (PadelK27)"
                 width={400}
                 height={300}
                 className="w-full h-48 object-cover"
@@ -385,7 +388,7 @@ export default function Home() {
             >
               <Image
                 src={`${prefix}/images/recepcion.webp`}
-                alt="Recepción"
+                alt="Recepción de Padel K27 en Esquivias (Toledo)"
                 width={400}
                 height={300}
                 className="w-full h-48 object-cover"
@@ -407,7 +410,7 @@ export default function Home() {
             >
               <Image
                 src={`${prefix}/images/pistas1.webp`}
-                alt="Clases de Pádel"
+                alt="Clases de pádel en Padel K27 (PadelK27)"
                 width={400}
                 height={300}
                 className="w-full h-48 object-cover"
