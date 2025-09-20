@@ -67,3 +67,47 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Mystery mode: subtly mask images site-wide except those explicitly opted-out */
+body.mystery img:not([data-no-mask]) {
+  filter: grayscale(60%) brightness(0.7) contrast(0.95);
+  transition: filter 200ms ease;
+}
+
+/* Allow hover to hint content a bit more on desktop */
+@media (hover: hover) {
+  body.mystery img:not([data-no-mask]):hover {
+    filter: grayscale(40%) brightness(0.8) contrast(1);
+  }
+}
+
+/* Diagonal ribbon 'PRÓXIMAMENTE' overlay when mystery mode is active */
+body.mystery::after {
+  content: 'PRÓXIMAMENTE';
+  position: fixed;
+  left: -25vw;
+  bottom: 20vh;
+  width: 150vw;
+  text-align: center;
+  transform: rotate(-20deg);
+  background: linear-gradient(90deg, #DC2626, #B91C1C);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.6rem 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  z-index: 60; /* above navbar */
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  body.mystery::after {
+    left: -40vw;
+    width: 180vw;
+    padding: 0.45rem 0;
+    font-size: 0.85rem;
+    bottom: 25vh;
+  }
+}

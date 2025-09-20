@@ -19,7 +19,7 @@ export default function PadelEsquiviasPage() {
             <ArrowLeft className="w-5 h-5 mr-2" /> Volver al inicio
           </a>
           <a href={`${prefix}/`} className="inline-flex items-center">
-            <Image src={`${prefix}/images/logo.webp`} alt="Padel K27 Logo" width={32} height={32} className="mr-2" />
+            <Image src={`${prefix}/images/logo.webp`} alt="Padel K27 Logo" width={32} height={32} className="mr-2" data-no-mask />
             <span className="font-semibold gradient-text">Padel K27</span>
           </a>
         </div>

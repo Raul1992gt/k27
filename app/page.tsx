@@ -119,6 +119,7 @@ export default function Home() {
                 width={60}
                 height={60}
                 className="mr-3"
+                data-no-mask
               />
               <span className="text-2xl font-bold gradient-text">Padel K27</span>
             </div>

@@ -58,9 +58,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const mystery = process.env.NEXT_PUBLIC_MYSTERY_MODE === '1'
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${inter.className} bg-padel-black text-white antialiased`}>
+      <body className={`${inter.className} bg-padel-black text-white antialiased ${mystery ? 'mystery' : ''}`}>
         {children}
       </body>
     </html>
