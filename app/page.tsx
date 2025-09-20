@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Script from 'next/script'
-import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Facebook, Instagram, Menu, MessageCircle, Maximize2, Minimize2 } from 'lucide-react'
+import { MapPin, Phone, Clock, Users, Trophy, Star, X, ChevronLeft, ChevronRight, Instagram, Menu, MessageCircle, Maximize2, Minimize2 } from 'lucide-react'
 
 export default function Home() {
   // Prefix for assets (only set when deploying to GitHub Pages)
@@ -691,16 +691,7 @@ export default function Home() {
               <h4 className="text-lg font-semibold text-white mb-4">Síguenos</h4>
               <div className="flex space-x-4">
                 <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="w-10 h-10 bg-padel-red rounded-full flex items-center justify-center hover:bg-padel-red-dark transition-colors"
-                >
-                  <Facebook className="w-5 h-5 text-white" />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.instagram.com/padelk27/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
