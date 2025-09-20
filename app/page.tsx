@@ -238,7 +238,7 @@ export default function Home() {
       <section className="bg-padel-black py-8">
         <div className="max-w-5xl mx-auto px-4 text-center text-gray-300">
           <p className="mb-3">
-            <span className="text-white font-semibold">Padel K27</span> (<span className="text-white font-semibold">PadelK27</span>) es tu club de pádel en <span className="text-white font-semibold">Esquivias (Toledo)</span>, a ~45 minutos del <span className="text-white font-semibold">sur de Madrid</span> por la A-4.
+            <span className="text-white font-semibold">Padel K27</span> es tu club de pádel en <span className="text-white font-semibold">Esquivias (Toledo)</span>, a ~45 minutos del <span className="text-white font-semibold">sur de Madrid</span> por la A-4.
           </p>
           <ul className="flex flex-wrap gap-3 justify-center text-sm text-gray-400">
             <li>
@@ -303,7 +303,7 @@ export default function Home() {
                   <Trophy className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Excelencia Deportiva en PadelK27</h3>
+                  <h3 className="text-xl font-semibold text-white">Excelencia Deportiva</h3>
                   <p className="text-gray-400">Instalaciones de nivel profesional</p>
                 </div>
               </div>
@@ -313,7 +313,7 @@ export default function Home() {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Comunidad Activa en Padel K27</h3>
+                  <h3 className="text-xl font-semibold text-white">Comunidad Activa</h3>
                   <p className="text-gray-400">Únete a una comunidad en crecimiento</p>
                 </div>
               </div>
