@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { MapPin, Phone, ArrowRight, ArrowLeft } from 'lucide-react'
 import CommentIcon from '../components/CommentIcon'
 
@@ -8,14 +9,18 @@ export const metadata: Metadata = {
 }
 
 export default function PadelEsquiviasPage() {
-  const bookingUrl = 'https://toletvmpadelindoor.es/?utm_source=k27-web&utm_medium=landing-esquivias&utm_campaign=reservas'
   const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  const bookingUrl = `${prefix}/reservar`
   return (
     <main className="min-h-screen bg-padel-black text-white">
       <div className="sticky top-0 z-10 w-full bg-padel-black/90 backdrop-blur-md border-b border-padel-red/20">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <a href={`${prefix}/`} className="inline-flex items-center text-gray-300 hover:text-white transition-colors">
             <ArrowLeft className="w-5 h-5 mr-2" /> Volver al inicio
+          </a>
+          <a href={`${prefix}/`} className="inline-flex items-center">
+            <Image src={`${prefix}/images/logo.webp`} alt="Padel K27 Logo" width={32} height={32} className="mr-2" />
+            <span className="font-semibold gradient-text">Padel K27</span>
           </a>
         </div>
       </div>
@@ -39,7 +44,7 @@ export default function PadelEsquiviasPage() {
             <li className="px-3 py-1 rounded-full border border-padel-red/30 text-gray-300">Reserva fácil</li>
           </ul>
           <div className="flex flex-wrap gap-3 mb-10">
-            <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-white text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-flex items-center">
+            <a href={bookingUrl} className="bg-white text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-flex items-center">
               Reservar online <ArrowRight className="w-5 h-5 ml-2" />
             </a>
             <a href="tel:+34618913615" className="border border-padel-red text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-padel-red hover:text-white inline-flex items-center">

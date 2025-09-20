@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `https://www.padelk27.es/reservar`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `https://www.padelk27.es/padel-esquivias`,
       lastModified: now,
       changeFrequency: 'monthly',

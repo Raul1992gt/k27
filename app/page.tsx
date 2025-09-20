@@ -790,9 +790,7 @@ export default function Home() {
               
               <div className="mt-6 space-y-3">
                 <a
-                  href="https://toletvmpadelindoor.es/?utm_source=k27-web&utm_medium=cta&utm_campaign=reservas"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`${prefix}/reservar`}
                   className="w-full bg-white text-padel-red hover:bg-gray-100 h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
                 >
                   Reservar online
