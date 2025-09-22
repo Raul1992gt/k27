@@ -6,6 +6,11 @@ import { Instagram } from 'lucide-react'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Next.js: themeColor debe declararse en `viewport`, no en `metadata`
+export const viewport = {
+  themeColor: '#0B0B0C',
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
   const siteUrl =
@@ -19,10 +24,15 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: 'pádel Toledo, pádel Esquivias, pádel Madrid, pistas de pádel Toledo, reservar pádel Toledo, club pádel Toledo, Padel K27',
     metadataBase: new URL(siteUrl),
     alternates: { canonical: prefix ? `${prefix}/` : '/' },
+    manifest: `${prefix}/site.webmanifest`,
     icons: {
-      icon: `${prefix}/images/logo.webp`,
-      shortcut: `${prefix}/images/logo.webp`,
-      apple: `${prefix}/images/logo.webp`,
+      icon: [
+        { url: `${prefix}/favicon.ico` },
+        { url: `${prefix}/icon-192.png`, sizes: '192x192', type: 'image/png' },
+        { url: `${prefix}/icon-512.png`, sizes: '512x512', type: 'image/png' },
+      ],
+      shortcut: `${prefix}/favicon.ico`,
+      apple: `${prefix}/apple-touch-icon.png`,
     },
     openGraph: {
       type: 'website',
@@ -82,7 +92,7 @@ export default function RootLayout({
             telephone: '+34 618 913 615',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Plaza Industrial Ctra. Borox Call, 22',
+              streetAddress: 'Plaza Industrial Ctra. Borox Call, 26',
               addressLocality: 'Esquivias',
               postalCode: '45221',
               addressRegion: 'Toledo',
@@ -108,7 +118,7 @@ export default function RootLayout({
             name: 'Padel K27',
             alternateName: 'PadelK27',
             url: siteUrl,
-            logo: `${siteUrl}${prefix}/images/logo.webp`,
+            logo: `${siteUrl}${prefix}/images/logo-sinfondo.png`,
             sameAs: ['https://www.instagram.com/padelk27/'],
           })}
         </Script>
@@ -156,6 +166,14 @@ export default function RootLayout({
               </div>
             </div>
           </a>
+        )}
+        {/* Interaction blocker overlay when in mystery mode (below the ribbon at z-[9999]) */}
+        {mystery && (
+          <div
+            aria-hidden
+            className="fixed inset-0 z-[9998] cursor-not-allowed"
+            style={{ pointerEvents: 'auto', background: 'transparent' }}
+          />
         )}
         {!mystery && (
           <a

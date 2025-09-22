@@ -58,10 +58,10 @@ export default function PadelToledoPage() {
             <div className="flex items-start gap-3 text-gray-300">
               <MapPin className="w-6 h-6 text-padel-red flex-shrink-0 mt-1" />
               <div>
-                Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo
+                Plaza Industrial Ctra. Borox Call, 26, 45221 Esquivias, Toledo
                 <div className="mt-3">
                   <a
-                    href={'https://maps.google.com/?q=' + encodeURIComponent('Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo')}
+                    href={'https://maps.google.com/?q=' + encodeURIComponent('Plaza Industrial Ctra. Borox Call, 26, 45221 Esquivias, Toledo')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-padel-red hover:bg-padel-red-dark text-white px-5 py-2 rounded-full font-semibold"

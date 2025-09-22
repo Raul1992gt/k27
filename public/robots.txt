@@ -1,0 +1,6 @@
+# robots.txt for padelk27.es
+User-agent: *
+Allow: /
+
+# Google ignora la directiva Host, por eso no la incluimos
+Sitemap: https://www.padelk27.es/sitemap.xml

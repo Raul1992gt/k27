@@ -323,7 +323,7 @@ export default function Home() {
                   <Star className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Experiencia Premium en el sur de Madrid y Toledo</h3>
+                  <h3 className="text-xl font-semibold text-white">Experiencia Premium</h3>
                   <p className="text-gray-400">Servicio personalizado y de calidad</p>
                 </div>
               </div>
@@ -478,7 +478,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Dirección</h3>
                   <p className="text-gray-400 text-lg">
-                    Plaza Industrial Ctra. Borox Call, 22<br />
+                    Plaza Industrial Ctra. Borox Call, 26<br />
                     45221 Esquivias, Toledo
                   </p>
                 </div>
@@ -529,7 +529,7 @@ export default function Home() {
             >
               <div className="aspect-video rounded-xl overflow-hidden mb-6">
                 <iframe
-                  src={`https://www.google.com/maps?q=${encodeURIComponent('Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo')}&output=embed`}
+                  src={`https://www.google.com/maps?q=${encodeURIComponent('Plaza Industrial Ctra. Borox Call, 26, 45221 Esquivias, Toledo')}&output=embed`}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -546,7 +546,7 @@ export default function Home() {
                   En Esquivias (Toledo), con excelente acceso desde la A-4 y buena zona de aparcamiento para tu comodidad.
                 </p>
                 <a 
-                  href={'https://maps.google.com/?q=' + encodeURIComponent('Plaza Industrial Ctra. Borox Call, 22, 45221 Esquivias, Toledo')}
+                  href={'https://maps.google.com/?q=' + encodeURIComponent('Plaza Industrial Ctra. Borox Call, 26, 45221 Esquivias, Toledo')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-padel-red hover:bg-padel-red-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
@@ -766,7 +766,7 @@ export default function Home() {
                     <MapPin className="w-5 h-5 text-padel-red" />
                     <div>
                       <p className="text-white font-semibold">Dirección</p>
-                      <p className="text-gray-300">Plaza Industrial Ctra. Borox Call, 22<br />45221 Esquivias, Toledo</p>
+                      <p className="text-gray-300">Plaza Industrial Ctra. Borox Call, 26<br />45221 Esquivias, Toledo</p>
                     </div>
                   </div>
                 </div>
@@ -1001,7 +1001,7 @@ export default function Home() {
           telephone: '+34 618 913 615',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Plaza Industrial Ctra. Borox Call, 22',
+            streetAddress: 'Plaza Industrial Ctra. Borox Call, 26',
             addressLocality: 'Esquivias',
             addressRegion: 'Toledo',
             postalCode: '45221',
