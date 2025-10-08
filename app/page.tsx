@@ -505,7 +505,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Contacto</h3>
                   <p className="text-gray-400 text-lg">
-                    +34 618 913 615
+                    +34 644 337 496
                   </p>
                 </div>
               </div>
@@ -630,7 +630,7 @@ export default function Home() {
                   <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
                 </summary>
                 <div className="px-6 pb-6 text-gray-300">
-                  Pulsa “Reservar online” para abrir el software de reservas o llama al <span className="text-white font-semibold">+34 618 913 615</span>.
+                  Pulsa “Reservar online” para abrir el software de reservas o llama al <span className="text-white font-semibold">+34 644 337 496</span>.
                 </div>
               </details>
             </motion.div>
@@ -756,7 +756,7 @@ export default function Home() {
                     <Phone className="w-5 h-5 text-padel-red" />
                     <div>
                       <p className="text-white font-semibold">Teléfono</p>
-                      <p className="text-padel-red text-lg font-bold">+34 618 913 615</p>
+                      <p className="text-padel-red text-lg font-bold">+34 644 337 496</p>
                     </div>
                   </div>
                 </div>
@@ -792,7 +792,7 @@ export default function Home() {
                 </a>
                 <div className="flex gap-3">
                   <a
-                    href="https://wa.me/34618913615?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
+                    href="https://wa.me/34644337496?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2"
@@ -801,7 +801,7 @@ export default function Home() {
                     <MessageCircle className="w-5 h-5" /> WhatsApp
                   </a>
                   <a 
-                    href="tel:+34618913615" 
+                    href="tel:+34644337496" 
                     className="flex-1 border border-padel-red text-padel-red hover:bg-padel-red hover:text-white h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2"
                     aria-label="Llamar por teléfono"
                   >
@@ -998,7 +998,7 @@ export default function Home() {
           name: 'Padel K27',
           image: [`${prefix}/images/logo.webp`],
           url: (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-          telephone: '+34 618 913 615',
+          telephone: '+34 644 337 496',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'Plaza Industrial Ctra. Borox Call, 26',
@@ -1049,7 +1049,7 @@ export default function Home() {
               name: '¿Cómo reservar pista?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Pulsa “Reservar online” para abrir el software de reservas o llama al +34 618 913 615.'
+                text: 'Pulsa “Reservar online” para abrir el software de reservas o llama al +34 644 337 496.'
               }
             },
             {

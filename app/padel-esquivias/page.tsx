@@ -47,7 +47,7 @@ export default function PadelEsquiviasPage() {
             <a href={bookingUrl} className="bg-white text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-flex items-center">
               Reservar online <ArrowRight className="w-5 h-5 ml-2" />
             </a>
-            <a href="tel:+34618913615" className="border border-padel-red text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-padel-red hover:text-white inline-flex items-center">
+            <a href="tel:+34644337496" className="border border-padel-red text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-padel-red hover:text-white inline-flex items-center">
               <Phone className="w-5 h-5 mr-2" /> Llamar
             </a>
           </div>
@@ -125,7 +125,7 @@ export default function PadelEsquiviasPage() {
                     <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
                   </summary>
                   <div className="px-5 pb-5 text-gray-300">
-                    Pulsa “Reservar online” o llama al <span className="text-white font-semibold">+34 618 913 615</span>.
+                    Pulsa “Reservar online” o llama al <span className="text-white font-semibold">+34 644 337 496</span>.
                   </div>
                 </details>
               </div>
@@ -173,7 +173,7 @@ export default function PadelEsquiviasPage() {
             Reservar
           </a>
           <a
-            href="https://wa.me/34618913615?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
+            href="https://wa.me/34644337496?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 border border-padel-red text-padel-red font-semibold py-3 rounded-full text-center"
@@ -182,7 +182,7 @@ export default function PadelEsquiviasPage() {
             WhatsApp
           </a>
           <a
-            href="tel:+34618913615"
+            href="tel:+34644337496"
             className="flex-1 border border-padel-red text-padel-red font-semibold py-3 rounded-full text-center"
           >
             Llamar
