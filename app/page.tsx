@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
@@ -238,7 +238,7 @@ export default function Home() {
       <section className="bg-padel-black py-8">
         <div className="max-w-5xl mx-auto px-4 text-center text-gray-300">
           <p className="mb-3">
-            <span className="text-white font-semibold">Padel K27</span> es tu club de pádel en <span className="text-white font-semibold">Esquivias (Toledo)</span>, a ~45 minutos del <span className="text-white font-semibold">sur de Madrid</span> por la A-4.
+            <span className="text-white font-semibold">Padel K27</span> es tu club de pádel en <span className="text-white font-semibold">Esquivias (Toledo)</span>, a 35 minutos de <span className="text-white font-semibold"> Madrid</span> por la A-4.
           </p>
           <ul className="flex flex-wrap gap-3 justify-center text-sm text-gray-400">
             <li>
@@ -491,9 +491,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Horarios</h3>
                   <p className="text-gray-400 text-lg">
-                    Entre semana: 9:30 - 14:00 y 16:30 - 23:00
-                    <br />
-                    Fines de semana: 9:30 - 14:00 y 16:30 - 21:00
+                    Todos los días: 07:00 - 23:00.
                   </p>
                 </div>
               </div>
@@ -649,7 +647,7 @@ export default function Home() {
                   <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
                 </summary>
                 <div className="px-6 pb-6 text-gray-300">
-                  Entre semana: 9:30–14:00 y 16:30–23:00. Fines de semana: 9:30–14:00 y 16:30–21:00.
+                  Todos los días: 07:00 - 23:00.
                 </div>
               </details>
             </motion.div>
@@ -776,8 +774,7 @@ export default function Home() {
                     <Clock className="w-5 h-5 text-padel-red" />
                     <div>
                       <p className="text-white font-semibold">Horario de Reservas</p>
-                      <p className="text-gray-300">Entre semana: 9:30 - 14:00 y 16:30 - 23:00</p>
-                      <p className="text-gray-300">Fines de semana: 9:30 - 14:00 y 16:30 - 21:00</p>
+                      <p className="text-gray-300">Todos los días: 07:00 - 23:00.</p>
                     </div>
                   </div>
                 </div>
@@ -1012,14 +1009,10 @@ export default function Home() {
           areaServed: ['Toledo', 'Esquivias', 'Madrid'],
           priceRange: '€€',
           openingHours: [
-            'Mo-Fr 09:30-14:00',
-            'Mo-Fr 16:30-23:00',
-            'Sa-Su 09:30-14:00',
-            'Sa-Su 16:30-21:00'
+            '07:00 - 23:00'
           ],
           sameAs: [
-            '#', // Facebook URL to be provided
-            '#', // Instagram URL to be provided
+            'https://www.instagram.com/padelk27/',
           ]
         })}
       </Script>
@@ -1059,7 +1052,7 @@ export default function Home() {
               name: '¿Cuál es el horario?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Entre semana: 9:30-14:00 y 16:30-23:00. Fines de semana: 9:30-14:00 y 16:30-21:00.'
+                text: 'Todos los días: 07:00 - 23:00.'
               }
             }
           ]

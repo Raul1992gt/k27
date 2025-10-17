@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
-import { Instagram } from 'lucide-react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -142,31 +141,6 @@ export default function RootLayout({
             },
           })}
         </Script>
-        {mystery && (
-          <a
-            href="https://www.instagram.com/padelk27/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="PRÓXIMAMENTE · Síguenos en Instagram para las novedades"
-            className="fixed left-1/2 -translate-x-1/2 z-[9999] block select-none"
-            style={{ bottom: '26vh', transform: 'translateX(-50%) rotate(-20deg)' }}
-          >
-            <div className="w-[160vw] max-w-none">
-              <div className="bg-gradient-to-r from-padel-red to-padel-red-dark opacity-95 shadow-2xl rounded border border-padel-red/60 flex flex-col items-center justify-center gap-2 md:gap-3 py-6 md:py-8 px-8 ribbon-mask">
-                <span className="font-extrabold uppercase text-white text-xl md:text-2xl tracking-[0.2em] drop-shadow shimmer-text">
-                  PRÓXIMAMENTE
-                </span>
-                <span className="inline-flex items-center gap-2 text-white/95 font-semibold text-base md:text-lg drop-shadow">
-                  <span>Síguenos en</span>
-                  <span className="inline-flex w-8 h-8 md:w-9 md:h-9 items-center justify-center rounded-full bg-white/10 ring-2 ring-white/30 icon-breathe">
-                    <Instagram className="w-5 h-5 md:w-6 md:h-6" />
-                  </span>
-                  <span>para las novedades</span>
-                </span>
-              </div>
-            </div>
-          </a>
-        )}
         {/* Interaction blocker overlay when in mystery mode (below the ribbon at z-[9999]) */}
         {mystery && (
           <div
@@ -175,20 +149,7 @@ export default function RootLayout({
             style={{ pointerEvents: 'auto', background: 'transparent' }}
           />
         )}
-        {!mystery && (
-          <a
-            href="https://www.instagram.com/padelk27/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Síguenos en Instagram"
-            className="fixed left-1/2 -translate-x-1/2 bottom-[5vh] z-[9999] inline-flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 rounded-full bg-padel-black/75 border border-padel-red/60 backdrop-blur-md shadow-xl hover:bg-padel-black/85 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-padel-red/70"
-          >
-            <span className="inline-flex w-7 h-7 md:w-8 md:h-8 items-center justify-center rounded-full bg-white/10 ring-2 ring-white/20 icon-breathe">
-              <Instagram className="w-4 h-4 md:w-5 md:h-5" />
-            </span>
-            <span className="text-sm md:text-base font-semibold">Síguenos en Instagram</span>
-          </a>
-        )}
+        {/* Instagram floating CTA removed */}
         {children}
       </body>
     </html>

@@ -136,7 +136,7 @@ export default function PadelToledoPage() {
                     <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
                   </summary>
                   <div className="px-5 pb-5 text-gray-300">
-                    Entre semana: 9:30–14:00 y 16:30–23:00. Fines de semana: 9:30–14:00 y 16:30–21:00.
+                    Todos los días: 07:00 - 23:00.
                   </div>
                 </details>
               </div>
