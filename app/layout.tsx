@@ -89,7 +89,7 @@ export default function RootLayout({
               process.env.NEXT_PUBLIC_SITE_URL ||
               (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
             image: [`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/pistas2.webp`],
-            telephone: '+34 618 913 615',
+            telephone: '+34 644 337 496',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Plaza Industrial Ctra. Borox Call, 26',

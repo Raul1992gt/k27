@@ -208,7 +208,7 @@ export default function Home() {
               onClick={() => setShowReservationModal(true)}
               className="bg-white text-padel-red px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
             >
-              Reservar Ahora
+              Gestiona tu reserva
             </button>
             <button 
               onClick={() => setShowGalleryModal(true)}
@@ -435,11 +435,11 @@ export default function Home() {
             <p className="text-xl text-white/90 mb-6">
               Reserva tu pista ahora y disfruta de la mejor experiencia de pádel
             </p>
-            <button 
+            <button
               onClick={() => setShowReservationModal(true)}
               className="bg-white text-padel-red px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
             >
-              Reservar Ahora
+              Gestiona tu reserva
             </button>
           </motion.div>
         </div>
@@ -630,7 +630,7 @@ export default function Home() {
                   <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
                 </summary>
                 <div className="px-6 pb-6 text-gray-300">
-                  Pulsa “Reservar online” para abrir el software de reservas o llama al <span className="text-white font-semibold">+34 644 337 496</span>.
+                  Pulsa “Gestiona tu reserva” para abrir el software de reservas o llama al <span className="text-white font-semibold">+34 644 337 496</span>.
                 </div>
               </details>
             </motion.div>
@@ -785,10 +785,12 @@ export default function Home() {
               
               <div className="mt-6 space-y-3">
                 <a
-                  href={`${prefix}/reservar`}
+                  href={'https://k27.taykus.com/'}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full bg-white text-padel-red hover:bg-gray-100 h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
                 >
-                  Reservar online
+                  Gestiona tu reserva
                 </a>
                 <div className="flex gap-3">
                   <a
@@ -1049,7 +1051,7 @@ export default function Home() {
               name: '¿Cómo reservar pista?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Pulsa “Reservar online” para abrir el software de reservas o llama al +34 644 337 496.'
+                text: 'Pulsa “Gestiona tu reserva” para abrir el software de reservas o llama al +34 644 337 496.'
               }
             },
             {

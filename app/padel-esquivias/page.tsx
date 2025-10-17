@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PadelEsquiviasPage() {
   const prefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
-  const bookingUrl = `${prefix}/reservar`
+  const bookingUrl = 'https://k27.taykus.com/'
   return (
     <main className="min-h-screen bg-padel-black text-white">
       <div className="sticky top-0 z-10 w-full bg-padel-black/90 backdrop-blur-md border-b border-padel-red/20">
@@ -44,8 +44,8 @@ export default function PadelEsquiviasPage() {
             <li className="px-3 py-1 rounded-full border border-padel-red/30 text-gray-300">Reserva fácil</li>
           </ul>
           <div className="flex flex-wrap gap-3 mb-10">
-            <a href={bookingUrl} className="bg-white text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-flex items-center">
-              Reservar online <ArrowRight className="w-5 h-5 ml-2" />
+            <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="bg-white text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-flex items-center">
+              Gestiona tu reserva <ArrowRight className="w-5 h-5 ml-2" />
             </a>
             <a href="tel:+34644337496" className="border border-padel-red text-padel-red px-6 py-3 rounded-full font-semibold hover:bg-padel-red hover:text-white inline-flex items-center">
               <Phone className="w-5 h-5 mr-2" /> Llamar
@@ -125,7 +125,7 @@ export default function PadelEsquiviasPage() {
                     <span className="text-padel-red transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
                   </summary>
                   <div className="px-5 pb-5 text-gray-300">
-                    Pulsa “Reservar online” o llama al <span className="text-white font-semibold">+34 644 337 496</span>.
+                    Pulsa “Gestiona tu reserva” o llama al <span className="text-white font-semibold">+34 644 337 496</span>.
                   </div>
                 </details>
               </div>
@@ -170,7 +170,7 @@ export default function PadelEsquiviasPage() {
             rel="noopener noreferrer"
             className="flex-1 bg-white text-padel-red font-semibold py-3 rounded-full text-center"
           >
-            Reservar
+            Gestionar
           </a>
           <a
             href="https://wa.me/34644337496?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
