@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
@@ -781,14 +781,36 @@ export default function Home() {
               </div>
               
               <div className="mt-6 space-y-3">
-                <a
+                <div>
+                  <a
                   href={'https://k27.taykus.com/'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-white text-padel-red hover:bg-gray-100 h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
-                >
-                  Gestiona tu reserva
-                </a>
+                  >
+                    Gestiona tu reserva
+                  </a>
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="https://apps.apple.com/es/app/padel-k27/id6754571429"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-padel-red text-white hover:bg-padel-red-dark h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
+                    aria-label="Descargar la app en iOS"
+                  >
+                    Descargar iOS
+                  </a>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.taykus.k27&hl=es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-padel-red text-white hover:bg-padel-red-dark h-12 rounded-full font-semibold transition-colors inline-flex items-center justify-center"
+                    aria-label="Descargar la app en Android"
+                  >
+                    Descargar Android
+                  </a>
+                </div>
                 <div className="flex gap-3">
                   <a
                     href="https://wa.me/34644337496?text=Hola%20K27%20Padel%2C%20quisiera%20reservar%20pista"
