@@ -791,7 +791,7 @@ export default function Home() {
                     Gestiona tu reserva
                   </a>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href="https://apps.apple.com/es/app/padel-k27/id6754571429"
                     target="_blank"
