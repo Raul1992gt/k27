@@ -46,7 +46,8 @@ export default function Home() {
     { src: `${prefix}/images/pistas1.webp`, alt: 'Pistas de Padel Principales', title: 'Pistas Profesionales' },
     { src: `${prefix}/images/pistas2.webp`, alt: 'Vista General de las Pistas', title: 'Instalaciones Completas' },
     { src: `${prefix}/images/recepcion.webp`, alt: 'Área de Recepción', title: 'Zona de Recepción' },
-    { src: `${prefix}/images/fachada.webp`, alt: 'Fachada del Recinto', title: 'Experiencia de Juego' }
+    { src: `${prefix}/images/fachada.webp`, alt: 'Fachada del Recinto', title: 'Experiencia de Juego' },
+    { src: `${prefix}/images/bar_pistas.webp`, alt: 'Zona restauración', title: 'Zona restauración' }
   ]
 
   useEffect(() => {
